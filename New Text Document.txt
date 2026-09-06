@@ -44,9 +44,20 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .logo strong {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+        .logo-container strong {
             color: var(--ieee-blue);
             font-size: 1.2rem;
+            border-left: 2px solid #ccc;
+            padding-left: 15px;
         }
         .nav-links {
             display: flex;
@@ -105,6 +116,10 @@
             background-color: var(--light-bg);
             max-width: 100%;
         }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
         /* About Section */
         .about-content {
@@ -139,11 +154,29 @@
             font-weight: bold;
         }
 
-        /* Team Grid */
-        .team-section-header {
-            text-align: center;
-            margin-bottom: 50px;
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover; 
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05); 
+        }
+
+        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -179,6 +212,18 @@
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        .email-link {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--sps-green);
+            font-weight: bold;
+            word-break: break-all;
+        }
+        .email-link:hover {
+            text-decoration: underline;
+            color: var(--ieee-blue);
         }
 
         /* Registration Form */
@@ -234,35 +279,40 @@
             background: var(--dark-gray);
             color: #ddd;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             margin-top: 40px;
+        }
+        .footer-geocode {
+            height: 30px;
+            margin-top: 15px;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <header>
         <nav>
-            <div class="logo">
-                <strong>IEEE SPS | Karunya</strong>
+            <div class="logo-container">
+                <img src="ieee-logo.png" alt="IEEE Logo" class="nav-logo">
+                <img src="sps-logo.png" alt="SPS Logo" class="nav-logo">
+                <strong>SPS | Karunya</strong>
             </div>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#team">Team</a>
                 <a href="#join">Join Us</a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1>Shape the Future of Tech</h1>
         <p>The official IEEE Signal Processing Society Student Branch at Karunya Institute of Technology and Sciences.</p>
         <a href="#join" class="cta-button">Join the Society</a>
     </div>
 
-    <!-- About Section -->
     <section id="about" class="about-content">
         <h2>Uncover the Tech That Powers Our World</h2>
         
@@ -280,76 +330,91 @@
         </ul>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="bg-light">
+    <section id="gallery" class="bg-light">
+        <div class="section-header">
+            <h2>Our Recent Events</h2>
+            <p>A glimpse into our technical workshops, poster competitions, and interactive sessions.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="event1.jpg" alt="SPS Event Group Photo"></div>
+            <div class="gallery-item"><img src="event2.jpg" alt="AI Poster Making Display"></div>
+            <div class="gallery-item"><img src="event3.jpg" alt="Students reviewing posters"></div>
+            <div class="gallery-item"><img src="event4.jpg" alt="Technical Discussion"></div>
+            <div class="gallery-item"><img src="event5.jpg" alt="Why SPS for ECE Presentation"></div>
+            <div class="gallery-item"><img src="event6.jpg" alt="Interactive Speaker Session"></div>
+            <div class="gallery-item"><img src="event7.jpg" alt="Seminar Conclusion"></div>
+            <div class="gallery-item"><img src="event8.jpg" alt="Lab Presentation"></div>
+            <div class="gallery-item"><img src="event9.jpg" alt="Hands-on Lab Session"></div>
+            <div class="gallery-item"><img src="event10.jpg" alt="Lab Group Photo"></div>
+        </div>
+    </section>
+
+    <section id="team">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <div class="team-section-header">
+            <div class="section-header">
                 <h2>Meet the Core Team</h2>
                 <p>Connect with the students and faculty leading the charge.</p>
             </div>
             
             <div class="team-grid">
-                
                 <div class="team-card">
                     <img src="kanishka.jpg" alt="Kanishka A">
                     <h4>Kanishka A</h4>
                     <p>Chair</p>
+                    <a href="mailto:Kanishkaa9123@gmail.com" class="email-link">&#9993; Kanishkaa9123@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="dhanuss.jpg" alt="Dhanuss N">
                     <h4>Dhanuss N</h4>
                     <p>Vice Chair</p>
+                    <a href="mailto:dhanussnet@gmail.com" class="email-link">&#9993; dhanussnet@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="pavithra.jpg" alt="Pavithra S K">
                     <h4>Pavithra S K</h4>
                     <p>Secretary</p>
+                    <a href="mailto:Pavithrasenthilk14@gmail.com" class="email-link">&#9993; Pavithrasenthilk14@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="sion.jpg" alt="Sion Sara Babu">
                     <h4>Sion Sara Babu</h4>
                     <p>Vice Secretary</p>
+                    <a href="mailto:sionsarababu536@gmail.com" class="email-link">&#9993; sionsarababu536@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="kashi.jpg" alt="Kashi Vishwanath M">
                     <h4>Kashi Vishwanath M</h4>
                     <p>Treasurer</p>
+                    <a href="mailto:mvishwanath2005@gmail.com" class="email-link">&#9993; mvishwanath2005@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="sudha.jpg" alt="Sudha S">
                     <h4>Sudha S</h4>
                     <p>Event Coordinator</p>
+                    <a href="mailto:sudhavalliaks@gmail.com" class="email-link">&#9993; sudhavalliaks@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="glenys.jpg" alt="Glenys Ronia R">
                     <h4>Glenys Ronia R</h4>
                     <p>Vice Event Coordinator</p>
+                    <a href="mailto:glenysronia@gmail.com" class="email-link">&#9993; glenysronia@gmail.com</a>
                 </div>
-                
                 <div class="team-card">
                     <img src="georgina.jpg" alt="Georgina Immaculate M">
                     <h4>Georgina Immaculate M</h4>
                     <p>Workshop Coordinator</p>
+                    <a href="mailto:georgina03immaculate@gmail.com" class="email-link">&#9993; georgina03immaculate@gmail.com</a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Registration Section -->
-    <section id="join">
+    <section id="join" class="bg-light">
         <div class="form-container">
             <h2 style="text-align: center; margin-top: 0;">Register for Orientation</h2>
             <p style="text-align: center; margin-bottom: 30px; color: #555;">Sign up below and we will email you the details for our first session!</p>
             
-            <!-- REMEMBER TO REPLACE THIS URL -->
-            <form action="https://formspree.io/f/mdeodlvq" method="POST">
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
                 
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -357,8 +422,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">University Email</label>
-                    <input type="email" id="email" name="email" required placeholder="name@karunya.edu.in">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="name123@gmail.com">
                 </div>
 
                 <div class="form-group">
@@ -382,9 +447,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 IEEE Signal Processing Society Student Branch - Karunya Institute of Technology and Sciences.</p>
+        <img src="geocode.png" alt="Geocode: SBC31061D" class="footer-geocode">
     </footer>
 
 </body>
